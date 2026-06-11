@@ -212,6 +212,13 @@ body {
   color: var(--gold); background: rgba(212,168,67,0.1);
   border: 1px solid rgba(212,168,67,0.35); padding: 2px 8px; border-radius: 2px;
 }
+.rc-updated-badge {
+  font-family: 'Exo 2', sans-serif; font-weight: 600; font-size: 8px;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  color: var(--grey); background: rgba(123,158,160,0.08);
+  border: 1px solid rgba(123,158,160,0.2); padding: 2px 8px; border-radius: 2px;
+  margin-left: auto;
+}
 
 /* RC buttons */
 .rc-btn {
