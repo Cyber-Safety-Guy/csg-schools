@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSL Quick-Reference Card — Cyber Safety Guy (Print)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A5 landscape;
+      margin: 0;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: white;
+      color: #1a1a2e;
+      line-height: 1.4;
+    }
+    
+    .page {
+      width: 210mm;
+      height: 148mm;
+      background: white;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      page-break-after: always;
+      overflow: hidden;
+      padding: 8mm;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 5mm;
+      border-bottom: 2px solid #1A5C5F;
+      padding-bottom: 3mm;
+    }
+    
+    .kcsie-badge {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 7pt;
+      font-weight: 600;
+      color: #1A5C5F;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 2mm;
+    }
+    
+    .card-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16pt;
+      font-weight: 900;
+      color: #1A5C5F;
+      letter-spacing: 1px;
+      margin-bottom: 1mm;
+    }
+    
+    .card-subtitle {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #5a6c7d;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    
+    .brand {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1A5C5F;
+      margin-top: 1mm;
+    }
+    
+    .brand-url {
+      font-size: 7pt;
+      color: #5a6c7d;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      flex: 1;
+    }
+    
+    .section-title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #1A5C5F;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3mm;
+      padding-bottom: 1mm;
+      border-bottom: 1px solid #d0e8ea;
+    }
+    
+    .risk-item {
+      margin-bottom: 3mm;
+    }
+    
+    .risk-title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #1A5C5F;
+      margin-bottom: 1mm;
+    }
+    
+    .risk-desc {
+      font-size: 7pt;
+      line-height: 1.3;
+      color: #1a1a2e;
+    }
+    
+    .duty-list {
+      list-style: none;
+    }
+    
+    .duty-list li {
+      font-size: 7pt;
+      line-height: 1.4;
+      margin-bottom: 2mm;
+      padding-left: 8px;
+      position: relative;
+    }
+    
+    .duty-list li:before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: #1A5C5F;
+      font-weight: 700;
+    }
+    
+    .platform-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2mm;
+    }
+    
+    .platform-item {
+      font-size: 6.5pt;
+      line-height: 1.3;
+    }
+    
+    .platform-name {
+      font-weight: 700;
+      color: #1A5C5F;
+      display: block;
+    }
+    
+    .platform-url {
+      color: #5a6c7d;
+    }
+    
+    .resources-box {
+      background: #f8fafb;
+      border: 1px solid #d0e8ea;
+      padding: 3mm;
+      border-radius: 3px;
+      margin-top: 3mm;
+    }
+    
+    .resources-title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      color: #1A5C5F;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2mm;
+    }
+    
+    .resource-list {
+      font-size: 6.5pt;
+      line-height: 1.5;
+      color: #1a1a2e;
+    }
+    
+    .childline-box {
+      background: #C0392B;
+      padding: 3mm;
+      border-radius: 3px;
+      text-align: center;
+      margin-top: 3mm;
+    }
+    
+    .childline-title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2mm;
+    }
+    
+    .childline-desc {
+      font-size: 6.5pt;
+      color: #fff;
+      margin-bottom: 2mm;
+    }
+    
+    .childline-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 14pt;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 1mm;
+    }
+    
+    .childline-url {
+      font-size: 7pt;
+      color: #fff;
+      opacity: 0.9;
+    }
+    
+    .footer-note {
+      text-align: center;
+      font-size: 6pt;
+      color: #5a6c7d;
+      margin-top: 3mm;
+      padding-top: 2mm;
+      border-top: 1px solid #d0e8ea;
+    }
+    
+    /* Page 2 styles */
+    .checklist {
+      list-style: none;
+    }
+    
+    .checklist li {
+      font-size: 7pt;
+      line-height: 1.4;
+      margin-bottom: 2.5mm;
+      padding-left: 12px;
+      position: relative;
+    }
+    
+    .checklist li:before {
+      content: "□";
+      position: absolute;
+      left: 0;
+      color: #1A5C5F;
+      font-weight: 700;
+      font-size: 9pt;
+    }
+    
+    .reporting-item {
+      margin-bottom: 3mm;
+    }
+    
+    .reporting-title {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #1A5C5F;
+      margin-bottom: 1mm;
+    }
+    
+    .reporting-desc {
+      font-size: 7pt;
+      line-height: 1.3;
+      color: #1a1a2e;
+      margin-bottom: 1mm;
+    }
+    
+    .reporting-contact {
+      font-size: 6.5pt;
+      color: #5a6c7d;
+    }
+    
+    .cut-line {
+      position: absolute;
+      bottom: 3mm;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 8pt;
+      color: #5a6c7d;
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+    }
+    
+    .cut-line:before,
+    .cut-line:after {
+      content: "";
+      width: 30mm;
+      height: 1px;
+      background: repeating-linear-gradient(
+        90deg,
+        #5a6c7d 0,
+        #5a6c7d 3px,
+        transparent 3px,
+        transparent 6px
+      );
+    }
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1: FRONT -->
+<div class="page">
+  <div class="header">
+    <div class="kcsie-badge">KCSIE 2024 · SAFEGUARDING REFERENCE</div>
+    <div class="card-title">DSL QUICK-REFERENCE</div>
+    <div class="card-subtitle">Designated Safeguarding Lead · Online Safety Edition</div>
+    <div class="brand">CYBER SAFETY GUY</div>
+    <div class="brand-url">schools.cybersafetyguy.com</div>
+  </div>
+  
+  <div class="content-grid">
+    <div>
+      <div class="section-title">⚠ Online Risk Categories — Know What You're Dealing With</div>
+      
+      <div class="risk-item">
+        <div class="risk-title">GROOMING</div>
+        <div class="risk-desc">Adult builds trust with a child online to exploit them. Often starts on gaming platforms or social media.</div>
+      </div>
+      
+      <div class="risk-item">
+        <div class="risk-title">SEXTORTION</div>
+        <div class="risk-desc">Coercion using intimate images — real or AI-generated — to demand money or further images.</div>
+      </div>
+      
+      <div class="risk-item">
+        <div class="risk-title">DEEPFAKES / AI ABUSE</div>
+        <div class="risk-desc">AI-generated fake intimate imagery used to humiliate, coerce or blackmail.</div>
+      </div>
+      
+      <div class="risk-item">
+        <div class="risk-title">CYBERBULLYING</div>
+        <div class="risk-desc">Sustained harassment via messages, posts or live content. Can involve impersonation accounts.</div>
+      </div>
+      
+      <div class="risk-item">
+        <div class="risk-title">RADICALISATION</div>
+        <div class="risk-desc">Extremist content or contact online. Use the Channel referral process if concerned.</div>
+      </div>
+      
+      <div class="risk-item">
+        <div class="risk-title">SELF-HARM CONTENT</div>
+        <div class="risk-desc">Platforms may expose children to pro-self-harm communities, challenges or graphic content.</div>
+      </div>
+    </div>
+    
+    <div>
+      <div class="section-title">DSL Statutory Duties — KCSIE 2024</div>
+      
+      <ul class="duty-list">
+        <li>Act as the main point of contact for all safeguarding concerns — online and offline</li>
+        <li>Refer cases of suspected abuse or neglect to children's social care (MASH) without delay</li>
+        <li>Liaise with the headteacher and maintain an up-to-date record of all concerns</li>
+        <li>Ensure all staff receive safeguarding training and know how to raise concerns</li>
+        <li>Promote a culture where pupils feel safe to report concerns about themselves or others</li>
+        <li>Understand the filtering and monitoring systems in place — and their limitations</li>
+        <li>Maintain awareness of the Online Safety Act 2023 and Ofcom platform duties</li>
+      </ul>
+      
+      <div class="section-title" style="margin-top: 4mm;">Platform Reporting Links</div>
+      
+      <div class="platform-links">
+        <div class="platform-item">
+          <span class="platform-name">META</span>
+          <span class="platform-url">facebook.com/help/reportlinks</span>
+        </div>
+        <div class="platform-item">
+          <span class="platform-name">INSTAGRAM</span>
+          <span class="platform-url">help.instagram.com</span>
+        </div>
+        <div class="platform-item">
+          <span class="platform-name">TIKTOK</span>
+          <span class="platform-url">tiktok.com/report</span>
+        </div>
+        <div class="platform-item">
+          <span class="platform-name">SNAPCHAT</span>
+          <span class="platform-url">support.snapchat.com</span>
+        </div>
+        <div class="platform-item">
+          <span class="platform-name">ROBLOX</span>
+          <span class="platform-url">roblox.com/abusereport</span>
+        </div>
+        <div class="platform-item">
+          <span class="platform-name">YOUTUBE</span>
+          <span class="platform-url">support.google.com/youtube</span>
+        </div>
+      </div>
+      
+      <div class="resources-box">
+        <div class="resources-title">CSG Schools Hub — Free Resources</div>
+        <div class="resource-list">
+          PSHE Lesson Plan — Online Grooming → DSL Quick-Reference Card → Parental Controls Setup Wizard → Have The Conversation Guide → Age-Appropriate Presentations → Staff CPD Resources →
+        </div>
+      </div>
+      
+      <div class="childline-box">
+        <div class="childline-title">Childline — For The Children In Your School</div>
+        <div class="childline-desc">Free, confidential, 24/7. Signpost pupils — they can call, chat or email.</div>
+        <div class="childline-number">0800 1111</div>
+        <div class="childline-url">childline.org.uk</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-note">schools.cybersafetyguy.com · Free for all UK schools</div>
+  <div class="cut-line">✂ CUT</div>
+</div>
+
+<!-- PAGE 2: BACK -->
+<div class="page">
+  <div class="header">
+    <div class="kcsie-badge">KCSIE 2024 · SAFEGUARDING REFERENCE</div>
+    <div class="card-title">DSL QUICK-REFERENCE</div>
+    <div class="card-subtitle">Designated Safeguarding Lead · Online Safety Edition</div>
+    <div class="brand">CYBER SAFETY GUY</div>
+    <div class="brand-url">schools.cybersafetyguy.com</div>
+  </div>
+  
+  <div class="content-grid">
+    <div>
+      <div class="section-title">⚡ When A Child Discloses — Do This, In Order</div>
+      
+      <ul class="checklist">
+        <li>LISTEN — give the child your full attention. Stay calm. Do not show shock.</li>
+        <li>DO NOT INVESTIGATE — ask no leading questions. Do not press for details.</li>
+        <li>DO NOT PROMISE CONFIDENTIALITY — be honest: "I may need to tell someone who can help."</li>
+        <li>RECORD — write down exactly what was said, in the child's own words, as soon as possible.</li>
+        <li>REPORT IMMEDIATELY — contact your DSL (or act as DSL if that is your role) the same day.</li>
+        <li>REFER — if there is immediate risk, contact MASH / children's social care directly. Do not delay.</li>
+        <li>IF IN IMMEDIATE DANGER — call 999. Do not wait for internal processes.</li>
+      </ul>
+    </div>
+    
+    <div>
+      <div class="section-title">Reporting Routes — Where To Go And When</div>
+      
+      <div class="reporting-item">
+        <div class="reporting-title">CEOP</div>
+        <div class="reporting-desc">Child sexual exploitation or online grooming by an adult</div>
+        <div class="reporting-contact">ceop.police.uk · Click CEOP button on most major platforms</div>
+      </div>
+      
+      <div class="reporting-item">
+        <div class="reporting-title">IWF</div>
+        <div class="reporting-desc">Child sexual abuse imagery (CSAM) found online</div>
+        <div class="reporting-contact">report.iwf.org.uk · Anonymous. Processed within 24 hours.</div>
+      </div>
+      
+      <div class="reporting-item">
+        <div class="reporting-title">POLICE 101</div>
+        <div class="reporting-desc">Non-urgent online offences — harassment, threat, image-based abuse</div>
+        <div class="reporting-contact">Also reportable via actionfraud.police.uk</div>
+      </div>
+      
+      <div class="reporting-item">
+        <div class="reporting-title">POLICE 999</div>
+        <div class="reporting-desc">Child at immediate risk of harm — online or offline. Do not wait.</div>
+        <div class="reporting-contact">Also contact MASH simultaneously where possible</div>
+      </div>
+      
+      <div class="reporting-item">
+        <div class="reporting-title">NSPCC</div>
+        <div class="reporting-desc">Concerns about a child not at your school — adult helpline</div>
+        <div class="reporting-contact">0808 800 5000 · help@nspcc.org.uk</div>
+      </div>
+      
+      <div class="reporting-item">
+        <div class="reporting-title">CHILDLINE</div>
+        <div class="reporting-desc">Direct support line for children — signpost pupils to this</div>
+        <div class="reporting-contact">0800 1111 · childline.org.uk · Free, 24/7, confidential</div>
+      </div>
+      
+      <div class="childline-box" style="margin-top: 4mm;">
+        <div class="childline-title">Childline — For The Children In Your School</div>
+        <div class="childline-desc">Free, confidential, 24/7. Signpost pupils — they can call, chat or email.</div>
+        <div class="childline-number">0800 1111</div>
+        <div class="childline-url">childline.org.uk</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-note">schools.cybersafetyguy.com · Free for all UK schools</div>
+  <div class="cut-line">✂ CUT</div>
+</div>
+
+</body>
+</html>
