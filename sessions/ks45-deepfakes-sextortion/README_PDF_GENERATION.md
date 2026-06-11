@@ -1,9 +1,9 @@
 # PDF Generation Instructions for PSHE KS4/5 Guide
 
 ## Overview
-The HTML files for the PSHE KS4/5 session guide have been created:
-- `CSG_PSHE_KS45.html` (digital/dark version)
-- `CSG_PSHE_KS45_Print.html` (print/light version)
+The HTML files for the PSHE KS4/5 session guide are located in:
+- `sessions/ks45-deepfakes-sextortion/CSG_PSHE_KS45.html` (digital/dark version)
+- `sessions/ks45-deepfakes-sextortion/CSG_PSHE_KS45_Print.html` (print/light version)
 
 ## Generating PDFs
 
@@ -28,7 +28,7 @@ node render_ks45_puppeteer.js
 ### Option 3: Manual Browser Print
 If the scripts fail due to missing system libraries:
 
-1. Open `CSG_PSHE_KS45.html` in Chrome/Chromium
+1. Open `sessions/ks45-deepfakes-sextortion/CSG_PSHE_KS45.html` in Chrome/Chromium
 2. Press Ctrl+P (Cmd+P on Mac) to open Print dialog
 3. Settings:
    - Destination: Save as PDF
@@ -36,12 +36,13 @@ If the scripts fail due to missing system libraries:
    - Margins: None
    - Background graphics: Enabled
 4. Save as `downloads/CSG_PSHE_KS45_Digital.pdf`
-5. Repeat for `CSG_PSHE_KS45_Print.html` → `downloads/CSG_PSHE_KS45_Print.pdf`
+5. Repeat for `sessions/ks45-deepfakes-sextortion/CSG_PSHE_KS45_Print.html` → `downloads/CSG_PSHE_KS45_Print.pdf`
 
 ### Option 4: Using Chrome Headless (Command Line)
 ```bash
-google-chrome --headless --disable-gpu --print-to-pdf=downloads/CSG_PSHE_KS45_Digital.pdf --no-margins CSG_PSHE_KS45.html
-google-chrome --headless --disable-gpu --print-to-pdf=downloads/CSG_PSHE_KS45_Print.pdf --no-margins CSG_PSHE_KS45_Print.html
+cd csg-schools
+google-chrome --headless --disable-gpu --print-to-pdf=downloads/CSG_PSHE_KS45_Digital.pdf --no-margins sessions/ks45-deepfakes-sextortion/CSG_PSHE_KS45.html
+google-chrome --headless --disable-gpu --print-to-pdf=downloads/CSG_PSHE_KS45_Print.pdf --no-margins sessions/ks45-deepfakes-sextortion/CSG_PSHE_KS45_Print.html
 ```
 
 ## System Requirements Issue

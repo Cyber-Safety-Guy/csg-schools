@@ -10,7 +10,7 @@ Static website for the Cyber Safety Guy Schools Hub, deployed on GitHub Pages at
 
 - `index.html` — the main hub page (all sections: Classroom, DSL, Staff Training, CSG Hub resources)
 - `style.css` — shared stylesheet for the hub; uses CSS custom properties (`--navy`, `--teal`, `--off-white`, etc.)
-- `CSG_PSHE_KS45.html` / `CSG_PSHE_KS45_Print.html` — self-contained HTML source files designed to be rendered to PDF (A4, 210mm×297mm pages)
+- `sessions/ks45-deepfakes-sextortion/` — PSHE KS4/5 session guide source files (HTML and documentation)
 - `downloads/` — committed PDF files served for download
 - `guides/` — additional PDF guides referenced from the hub
 - `images/` — logos and assets
