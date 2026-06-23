@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+44const puppeteer = require('puppeteer');
 const path = require('path');
 
 async function generatePDF(htmlFile, outputFile) {
